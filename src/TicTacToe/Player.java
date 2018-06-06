@@ -1,16 +1,18 @@
-package Something;
+package TicTacToe;
 
 public class Player {
 
     private Board board;
     private String name;
-    public Player(String name, Board board){
+    private char sign;
+
+    public Player(String name, Board board, char sign){
         this.board = board;
         this.name = name;
+        this.sign = sign;
     }
     public boolean move(int position){
-        board.putToBoard1(position);
-        return true;
+       return board.putToBoard(position, sign);
     }
 
 }
