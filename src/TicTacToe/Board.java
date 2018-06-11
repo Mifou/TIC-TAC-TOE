@@ -2,14 +2,14 @@ package TicTacToe;
 
 
 public class Board {
-    private char board[][] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+    private char elements[][] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
     private static final char ZERO_CHAR = (char) 48;
-    
+
     public void displayBoard() {
-        for (int i = 0; i < board.length; i++) {
+        for (int i = 0; i < elements.length; i++) {
             System.out.println();
-            for (int j = 0; j < board[i].length; j++) {
-                System.out.print(board[i][j]);
+            for (int j = 0; j < elements[i].length; j++) {
+                System.out.print(elements[i][j]);
             }
         }
         System.out.println();
@@ -17,10 +17,10 @@ public class Board {
 
     public boolean putToBoard(int position, char sign) {
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == ZERO_CHAR + position) {
-                    board[i][j] = sign;
+        for (int i = 0; i < elements.length; i++) {
+            for (int j = 0; j < elements[i].length; j++) {
+                if (elements[i][j] == ZERO_CHAR + position) {
+                    elements[i][j] = sign;
                     return true;
                 }
             }
@@ -31,5 +31,7 @@ public class Board {
     }
 
 
+    public char[][] getElements() {
+        return elements;
+    }
 }
-
