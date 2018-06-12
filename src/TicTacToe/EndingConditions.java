@@ -3,15 +3,31 @@ package TicTacToe;
 public class EndingConditions {
     private Board board;
 
-    public EndingConditions (Board board){
+    public EndingConditions(Board board) {
         this.board = board;
     }
 
-    public boolean isDraw(){
+    public boolean checkEndingConditions(Player actualPlayer) {
+        if (isWin()) {
+            System.out.println("\nThe winner is " + actualPlayer.getName() + " (sign " + actualPlayer.getSign() + ")");
+            return true;
+        }
+        if (isDraw()) {
+            System.out.println("\nDRAW");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean isDraw() {
         char elements[][] = board.getElements();
+        if (isWin()) {
+            return false;
+        }
         for (int i = 0; i < elements.length; i++) {
             for (int j = 0; j < elements[i].length; j++) {
-                if (elements[i][j] >= '1'&& elements[i][j] <='9' || isWin()) {
+                if (elements[i][j] >= '1' && elements[i][j] <= '9') {
                     return false;
                 }
             }
@@ -20,7 +36,8 @@ public class EndingConditions {
 
         return true;
     }
-    public boolean isWin(){
+
+    private boolean isWin() {
 
         //In horizontal case
         char elements[][] = board.getElements();
@@ -44,9 +61,11 @@ public class EndingConditions {
         //In diagonal case
         for (int i = 0; i < elements.length; i++) {
             for (int j = 0; j < elements[i].length; j++) {
-                if ((elements[0][0] == elements[1][1]) && (elements[0][0] == elements[2][2])) {
+                if (((elements[0][0] == elements[1][1]) && (elements[0][0] == elements[2][2])) ||
+                        (elements[0][2] == elements[1][1] && elements[0][2] == elements[2][0])) {
                     return true;
                 }
+
             }
 
         }

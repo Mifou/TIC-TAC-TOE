@@ -1,8 +1,5 @@
 package TicTacToe;
 
-import java.util.InputMismatchException;
-
-
 public class Player {
 
 
@@ -13,7 +10,6 @@ public class Player {
     public char getSign() {
         return sign;
     }
-
 
 
     private Board board;
@@ -33,7 +29,6 @@ public class Player {
     public boolean move(int position) {
         return board.putToBoard(position, sign);
     }
-
 
     @Override
     public boolean equals(Object o) {

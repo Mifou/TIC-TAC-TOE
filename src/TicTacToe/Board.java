@@ -30,7 +30,6 @@ public class Board {
 
     }
 
-
     public char[][] getElements() {
         return elements;
     }

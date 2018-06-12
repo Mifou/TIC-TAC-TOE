@@ -29,6 +29,7 @@ public class Input {
 
     public boolean isSignIn(int position) {
         char elements[][] = board.getElements();
+        //Calculations are based on indexes, therefore position has to be 1 smaller
         position -= 1;
         int i = position / 3;
         int j = position % 3;
