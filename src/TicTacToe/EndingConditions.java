@@ -20,7 +20,7 @@ public class EndingConditions {
         }
     }
 
-    private boolean isDraw() {
+    boolean isDraw() {
         char elements[][] = board.getElements();
         if (isWin()) {
             return false;
@@ -37,7 +37,7 @@ public class EndingConditions {
         return true;
     }
 
-    private boolean isWin() {
+    boolean isWin() {
 
         //In horizontal case
         char elements[][] = board.getElements();
