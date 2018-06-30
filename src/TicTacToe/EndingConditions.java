@@ -37,8 +37,15 @@ public class EndingConditions {
         return true;
     }
 
-    boolean isWin() {
+    boolean isWin(){
+        if (isWinDiagonally()||isWinHorizontally()||isWinVertically()){
+            return true;
+        }
+        return false;
+    }
 
+
+    boolean isWinHorizontally() {
         //In horizontal case
         char elements[][] = board.getElements();
         for (int i = 0; i < elements.length; i++) {
@@ -49,7 +56,13 @@ public class EndingConditions {
             }
 
         }
-        //In vertical case
+        return false;
+    }
+
+
+    //In vertical case
+    boolean isWinVertically() {
+        char elements[][] = board.getElements();
         for (int i = 0; i < elements.length; i++) {
             for (int j = 0; j < elements[i].length; j++) {
                 if ((elements[0][j] == elements[1][j]) && (elements[0][j] == elements[2][j])) {
@@ -58,7 +71,12 @@ public class EndingConditions {
             }
 
         }
-        //In diagonal case
+        return false;
+    }
+
+    //In diagonal case
+    boolean isWinDiagonally() {
+        char elements[][] = board.getElements();
         for (int i = 0; i < elements.length; i++) {
             for (int j = 0; j < elements[i].length; j++) {
                 if (((elements[0][0] == elements[1][1]) && (elements[0][0] == elements[2][2])) ||
