@@ -37,12 +37,9 @@ public class EndingConditions {
         return true;
     }
 
-    boolean isWin(){
-        if (isWinDiagonally()||isWinHorizontally()||isWinVertically()){
-            return true;
+    boolean isWin() {
+        return isWinDiagonally() || isWinHorizontally() || isWinVertically();
         }
-        return false;
-    }
 
 
     boolean isWinHorizontally() {
